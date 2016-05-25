@@ -1,12 +1,12 @@
-name := "cogx-io"
+name := "cct-io"
 
-description := "CogX I/O libraries."
+description := "CCT I/O libraries."
 
 organizationName := "Hewlett Packard Labs"
 
 organizationHomepage := Some(url("http://www.labs.hpe.com"))
 
-version := "0.8.6"
+version := "0.8.7"
 
 organization := "com.hpe.cct"
 
@@ -14,7 +14,7 @@ scalaVersion := "2.11.7"
 
 parallelExecution in Test := false
 
-libraryDependencies += "com.hpe.cct" %% "cogx" % "4.4.9"
+libraryDependencies += "com.hpe.cct" %% "cogx" % "5.0.0-alpha.3"
 
 libraryDependencies ++= {
   val javacv = "1.1"
@@ -45,4 +45,4 @@ licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html
 
 bintrayRepository := "maven"
 
-bintrayOrganization := Some("cogexmachina")
+bintrayOrganization := Some("hpe-cct")
