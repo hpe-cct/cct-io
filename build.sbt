@@ -14,7 +14,7 @@ scalaVersion := "2.11.7"
 
 parallelExecution in Test := false
 
-libraryDependencies += "com.hpe.cct" %% "cogx" % "5.0.0-alpha.3"
+libraryDependencies += "com.hpe.cct" %% "cct-core" % "5.0.0-alpha.3"
 
 libraryDependencies ++= {
   val javacv = "1.1"
@@ -42,6 +42,9 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.6" % "test"
 libraryDependencies += "junit" % "junit" % "4.7" % "test"
 
 licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))
+
+resolvers ++= Seq(Resolver.bintrayRepo("bchandle", "maven"),
+                  Resolver.bintrayRepo("hpe-cct", "maven"))
 
 bintrayRepository := "maven"
 
