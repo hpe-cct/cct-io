@@ -24,7 +24,6 @@ import org.bytedeco.javacv.FrameGrabber.ImageMode
 /**
   *
   */
-
 object ColorWebcam {
   val Colors = 3
   val lookup = Array.tabulate(256)(_ / 255f)
@@ -79,12 +78,18 @@ object ColorWebcam {
   }
   def apply(url: String, width: Int, height: Int): ColorSensor = apply(url, Format.Unknown, width, height)
 
-  /** Create a color sensor that captures video from the specified device
-    * (defaults to device 0, which usually corresponds to the first webcam
-    * installed in a system). If capture width, height, or framerate are
+  /** Create a color sensor that captures video from the specified device.
+    *
+    * WARNING: This implementation depends on a Windows-specific library
+    *          (videoInput). For a Linux compatible camera sensor, use the
+    *          [[LinuxWebcam]] class.
+    *
+    * Defaults to device 0, which usually corresponds to the first webcam
+    * installed in a system. If capture width, height, or framerate are
     * supplied, an attempt is made to apply those parameters to the video
-    * stream, but not all webcams support all image sizes or framerates, and
-    * may ignore those settings. */
+    * stream. Be warned that not all cameras support all image sizes or
+    * framerates, and they may ignore those settings (silently or otherwise).
+    */
   def apply(width: Int = 0, height: Int = 0, deviceNumber: Int = 0, framerate: Double = 0) = {
     val grabber = new VideoInputFrameGrabber(deviceNumber)
 
