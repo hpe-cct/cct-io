@@ -6,7 +6,7 @@ organizationName := "Hewlett Packard Labs"
 
 organizationHomepage := Some(url("http://www.labs.hpe.com"))
 
-version := "0.8.7"
+version := "0.8.8"
 
 organization := "com.hpe.cct"
 
@@ -14,7 +14,7 @@ scalaVersion := "2.11.7"
 
 parallelExecution in Test := false
 
-libraryDependencies += "com.hpe.cct" %% "cct-core" % "5.0.0-alpha.3"
+libraryDependencies += "com.hpe.cct" %% "cct-core" % "5.0.0-alpha.4"
 
 libraryDependencies ++= {
   val javacv = "1.1"
@@ -43,8 +43,7 @@ libraryDependencies += "junit" % "junit" % "4.7" % "test"
 
 licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))
 
-resolvers ++= Seq(Resolver.bintrayRepo("bchandle", "maven"),
-                  Resolver.bintrayRepo("hpe-cct", "maven"))
+resolvers += Resolver.jcenterRepo
 
 bintrayRepository := "maven"
 
