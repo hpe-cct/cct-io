@@ -6,7 +6,7 @@ organizationName := "Hewlett Packard Labs"
 
 organizationHomepage := Some(url("http://www.labs.hpe.com"))
 
-version := "0.8.8"
+version := "0.8.9"
 
 organization := "com.hpe.cct"
 
@@ -14,7 +14,7 @@ scalaVersion := "2.11.7"
 
 parallelExecution in Test := false
 
-libraryDependencies += "com.hpe.cct" %% "cct-core" % "5.0.0-alpha.4"
+libraryDependencies += "com.hpe.cct" %% "cct-core" % "5.0.0"
 
 libraryDependencies ++= {
   val javacv = "1.1"
